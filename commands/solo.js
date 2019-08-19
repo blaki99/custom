@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const blakiconfig = require("./blakiprefix.json");
  
 module.exports.run = async (blaki, message, args) => {
  
@@ -33,9 +34,7 @@ module.exports.run = async (blaki, message, args) => {
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/3Q7TQyy.png");
     message.channel.send(everyone.toString());
-    message.channel.send(customEmbed).then(function (message) {
-        message.react(react)
-    })
+    message.channel.send(customEmbed)
 }
  
 module.exports.help = {
