@@ -2,7 +2,7 @@ const Discord = require("discord.js");
  
 module.exports.run = async (blaki, message, args) => {
  
-    let HOST = message.guild.roles.find("name", "🔌 » HOST");
+    let HOST = message.guild.roles.find("name", "Host Customy");
  
     let pass = (args[0]);
     let everyone = message.guild.defaultRole;
