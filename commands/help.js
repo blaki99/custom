@@ -16,5 +16,5 @@ module.exports.run = async (blaki, message, args) => {
 }
 
 module.exports.help = {
-  name:"trio"
+  name:"help"
 }
