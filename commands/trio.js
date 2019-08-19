@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
     const react = ''
   
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
-	if(!args[0]) return message.channel.send(`❌ _Wprowadź prawidłowe wartości, **${prefix}solo hasło **_ ❌`).then(() =>
+	if(!args[0]) return message.channel.send(`❌ _Wprowadź prawidłowe wartości, **${prefix}trio hasło **_ ❌`).then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
     })
