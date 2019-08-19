@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
+const blakiconfig = require("./blakiprefix.json");
  
 module.exports.run = async (blaki, message, args) => {
  
     let HOST = message.guild.roles.find("name", "Host Customy");
-	let prefix = blakiconfig.prefix;
+    let prefix = blakiconfig.prefix;
     let pass = (args[0]);
     let everyone = message.guild.defaultRole;
     const zasady0 = "> **» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY !"
