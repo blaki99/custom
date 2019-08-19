@@ -1,10 +1,9 @@
 const Discord = require("discord.js");
-const blakiconfig = require("../blakiprefix.json");
  
 module.exports.run = async (blaki, message, args) => {
  
-    let HOST = message.guild.roles.find("name", "Host Customy");
-    let prefix = blakiconfig.prefix;
+    let HOST = message.guild.roles.find("name", "🔌 » HOST");
+ 
     let pass = (args[0]);
     let everyone = message.guild.defaultRole;
     const zasady0 = "> **» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY !"
@@ -18,7 +17,7 @@ module.exports.run = async (blaki, message, args) => {
     const react = '✅'
   
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
-	if(!args[0]) return message.channel.send(`❌ _Wprowadź prawidłowe wartości, **${prefix}trio hasło **_ ❌`).then(() =>
+    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-trio hasło **_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
     })
@@ -26,7 +25,7 @@ module.exports.run = async (blaki, message, args) => {
     let customEmbed = new Discord.RichEmbed()
     .setColor("#ffa500")
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
-    .setTitle(`**ARENA TRIO CUSTOM**`)
+    .setTitle(`**ARENA TRIO CUSTOM`)
     .setURL('https://discord.gg/u9W8euF')
     .addField("**HASŁO:**", `**${pass}**`, true)
     .addField("**HOST:**", `${message.author}`, true)
