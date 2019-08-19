@@ -36,6 +36,7 @@ module.exports.run = async (blaki, message, args) => {
     message.channel.send(everyone.toString());
     message.channel.send(customEmbed).then(function (message) {
         message.react(react)
+    })
 }
  
 module.exports.help = {
