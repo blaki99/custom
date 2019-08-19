@@ -4,7 +4,7 @@ const blakiconfig = require("./blakiprefix.json");
 module.exports.run = async (blaki, message, args) => {
  
     let HOST = message.guild.roles.find("name", "Host Customy");
-	let prefix = blakiconfig.prefix;
+    let prefix = blakiconfig.prefix;
     let pass = (args[0]);
     let everyone = message.guild.defaultRole;
     const zasady0 = "> **» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY !"
@@ -15,7 +15,7 @@ module.exports.run = async (blaki, message, args) => {
     const zasady5 = "> **» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady6 = "> **» NIE** WALCZ PRZED 3 STREFĄ JEŚLI WŁĄCZY SIĘ STORM SURGE!"
     const zasady7 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE BANEM !**"
-    const react = ''
+    const react = '✅'
   
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
 	if(!args[0]) return message.channel.send(`❌ _Wprowadź prawidłowe wartości, **${prefix}solo hasło **_ ❌`).then(() =>
@@ -34,7 +34,8 @@ module.exports.run = async (blaki, message, args) => {
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/3Q7TQyy.png");
     message.channel.send(everyone.toString());
-    message.channel.send(customEmbed)
+    message.channel.send(customEmbed).then(function (message) {
+        message.react(react)
 }
  
 module.exports.help = {
