@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const blakiconfig = require("./blakiprefix.json");
+const blakiconfig = require("../blakiprefix.json");
  
 module.exports.run = async (blaki, message, args) => {
  
