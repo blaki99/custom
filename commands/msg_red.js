@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
 - ${msg} ${msg2}${ramka2}`)
     .addField("__**OD:**__", `${message.author}`)
     .setTimestamp(message.createdAt)
-    .setFooter("Bot stworzony przez BlaKi", "https://i.imgur.com/eBDl1P5.jpg");
+    .setFooter("Nowa Informacja", "https://i.imgur.com/eBDl1P5.jpg");
     message.channel.send(msgEmbed)
 }
 
