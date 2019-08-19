@@ -1,4 +1,4 @@
-const blakiconfig = require("./blakiconfig.json");
+const blakiconfig = require("./blakiprefix.json");
 const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
 const blaki = new Discord.Client({disableEveryone: false});
@@ -42,7 +42,7 @@ blaki.on("message", async message => {
     if(message.author.blaki) return;
     if(message.channel.type === "dm") return;
   
-    let prefix = blakiconfig.prefix;
+    let prefix = blakiprefix.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
