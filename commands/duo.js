@@ -23,7 +23,7 @@ module.exports.run = async (blaki, message, args) => {
     })
     message.delete();
     let customEmbed = new Discord.RichEmbed()
-    .setColor("#ffa500")
+    .setColor("#ff0000")
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
     .setTitle(`**DUO CUSTOM`)
     .setURL('https://discord.gg/u9W8euF')
