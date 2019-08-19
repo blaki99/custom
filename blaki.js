@@ -16,7 +16,7 @@ let date = require('date-and-time');
 blaki.on('ready', async () => 
 {
   console.log(`${blaki.user.username} jest online!`);
-  blaki.user.setActivity('CUSTOMY by BlaKi', { type: 'PLAYING'});
+  blaki.user.setActivity('BOT CREATED BY BLAKI', { type: 'PLAYING'});
 });
 
 fs.readdir("./commands/", (err, files) => {
