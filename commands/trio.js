@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const config = require("../blakirole.json");
  
 module.exports.run = async (custom, message, args) => {
  
@@ -14,7 +13,10 @@ module.exports.run = async (custom, message, args) => {
     const zasady6 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE BANEM !**"
     const react = '✅'
 
-    if(!message.member.roles.some(r=>[config.host].includes(r.name))) return message.reply("Ooops, nie posiadasz uprawnień!");
+    let role = JSON.parse(fs.readFileSync("../blakirole.json", "utf8"));
+    }
+    let host = role[message.guild.id].role;
+    if(!message.member.roles.some(r=>[host].includes(r.name))) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-trio hasło **_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
