@@ -10,5 +10,5 @@ module.exports.run = async (custom, message, args) => {
 }
 
 module.exports.help = {
-  name: "clear"
+  name: "-clear"
 }
