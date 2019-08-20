@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (blaki, message, args) => {
+module.exports.run = async (custom, message, args) => {
   const ramka = "``"
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No.");
   if(!args[0]) return message.channel.send("no");
