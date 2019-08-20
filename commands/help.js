@@ -6,9 +6,9 @@ module.exports.run = async (custom, message, args) => {
     
     let HelpEmbed = new Discord.RichEmbed()
     .setColor("#FF0000")
-    .addField("__**KOMENDY:**__", "> -solo" + `\n` + "> -duo" + `\n` + "> -trio" + `\n` + "> -msg, -msgr, -msgb, -msgo")
+    .addField("__**KOMENDY:**__", "> -solo" + `\n` + "> -duo" + `\n` + "> -trio" + `\n` + "> -msg")
     .setTimestamp(message.createdAt)
-    .setFooter("Dostępne Komendy", "https://i.imgur.com/VRM530o.jpg");
+    .setFooter("Dostępne Komendy", "https://i.imgur.com/9A72yKJ_d.jpg");
     message.channel.send(HelpEmbed);
 }
 
