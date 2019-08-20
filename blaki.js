@@ -16,7 +16,7 @@ const activities_list = [
     "BOT MADE BY BLAKI 💚",
     "BOT PREFIX (-) ❤", 
     "USE -HELP 🍁"
-    ];
+];
 
 let date = require('date-and-time');
 
