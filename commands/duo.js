@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
  
-module.exports.run = async (blaki, message, args) => {
+module.exports.run = async (custom, message, args) => {
  
-    let HOST = message.guild.roles.find("name", "Host Customy");
+    let HOST = message.guild.roles.find("name", "HOST");
  
     let pass = (args[0]);
     let everyone = message.guild.defaultRole;
@@ -30,7 +30,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("**HOST:**", `${message.author}`, true)
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4 + `\n`+ zasady5 + `\n`+`\n`+ zasady6)
     .setTimestamp(message.createdAt)
-    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/eBDl1P5.jpg");
+    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/VRM530o.jpg");
     message.channel.send(everyone.toString());
     message.channel.send(customEmbed).then(function (message) {
         message.react(react)
