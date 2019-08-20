@@ -1,4 +1,4 @@
-const blakiconfig = require("./blakiprefix.json");
+Oconst blakiconfig = require("./blakiprefix.json");
 const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
 const blaki = new Discord.Client({disableEveryone: false});
@@ -11,25 +11,22 @@ const config = {
     token: process.env.TOKEN
 };
 
+const activities_list = [
+    "CUSTOMY 💙", 
+    "BOT MADE BY BLAKI 💚",
+    "BOT PREFIX (-) ❤", 
+    "USE -HELP 🍁"
+    ];
+
 let date = require('date-and-time');
 
 blaki.on('ready', async () => 
 {
   console.log(`${blaki.user.username} jest online!`);
-  switch (blaki.user.setActivity) {
-    case '1':
-        ('CUSTOMY ❤', { type: 'PLAYING'});
-        break;
-    case '2':
-        ('CUSTOMY 💙', { type: 'PLAYING'});
-        break;
-    case '3':
-        ('CUSTOMY 💚', { type: 'PLAYING'})
-        break;
-    case '4':
-        ('CUSTOMY 💖', { type: 'PLAYING'});
-        break;
-    }
+  setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
+        blaki.user.setActivity(activities_list[index]);
+    }, 10000);
 });
 
 fs.readdir("./commands/", (err, files) => {
