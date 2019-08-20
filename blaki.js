@@ -62,14 +62,6 @@ custom.on("message", async message => {
     let prefix = prefixes[message.guild.id].prefixes;
     if(!message.content.startsWith(prefix)) return;
 
-    let roles = JSON.parse(fs.readFileSync("./roles.json", "utf8"));
-    if(!roles[message.guild.id]){
-    roles[message.guild.id] = {
-      host: CustomRole.HostRole
-      };
-    }
-    let HostRole = roles[message.guild.id].roles;
-
     //let prefix = CustomConfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
