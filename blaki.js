@@ -50,8 +50,18 @@ custom.on("message", async message => {
     
     if(message.author.custom) return;
     if(message.channel.type === "dm") return;
-  
-    let prefix = CustomConfig.prefix;
+    
+    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+    if(!prefixes[message.guild.id]){
+    prefixes[message.guild.id] = {
+      prefixes: CustomConfig.prefix
+      };
+    }
+
+    let prefix = prefixes[message.guild.id].prefixes;
+    if(!message.content.startsWith(prefix)) return;
+
+    //let prefix = CustomConfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
