@@ -5,9 +5,9 @@ module.exports.run = async (custom, message, args) => {
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
     const ramka = "```"
-
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Ooops, nie posiadasz uprawnień!");
-    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msg <wiadomość>**_ ❌")
+   
+    if(!message.member.roles.some(r => r.name === "Host Customy")) return message.reply("Ooops, nie posiadasz roli ``Host Customy``");
+    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-msg <wiadomość>**_ ❌")
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
     .setColor("#6B7074")
