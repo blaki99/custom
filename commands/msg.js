@@ -18,7 +18,7 @@ module.exports.run = async (custom, message, args) => {
 ${msg} ${msg2}${ramka2}`)
     .addField("__**OD:**__", `${message.author}`)
     .setTimestamp(message.createdAt)
-    .setFooter("Nowa Informacja", "https://i.imgur.com/VRM530o.jpg");
+    .setFooter("Nowa Informacja", "https://i.imgur.com/9A72yKJ_d.jpg");
     message.channel.send(msgEmbed)
 }
 
