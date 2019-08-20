@@ -1,5 +1,4 @@
 const CustomConfig = require("./blakiprefix.json");
-const CustomRole = require("./blakirole.json");
 const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
 const custom = new Discord.Client({disableEveryone: false});
