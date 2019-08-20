@@ -2,8 +2,6 @@ const Discord = require("discord.js");
  
 module.exports.run = async (custom, message, args) => {
  
-    let HOST = message.guild.roles.find("name", "HOST");
- 
     let pass = (args[0]);
     let everyone = message.guild.defaultRole;
     const zasady0 = "> **» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY !"
@@ -15,7 +13,7 @@ module.exports.run = async (custom, message, args) => {
     const zasady6 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE BANEM !**"
     const react = '✅'
   
-    if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
+    if(!message.member.roles.find(r => r.name === "HOST") return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-duo hasło **_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
