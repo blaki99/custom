@@ -12,9 +12,11 @@ const config = {
 };
 
 const aktywnosc = [
-    "CUSTOMY 🖤", 
-    "BOT CREATED BY BLAKI 🍁", 
-    "USE -HELP 💚"
+    "SCRIMS BOT 💛", 
+    "CREATED BY BLAKI 🍁", 
+    "USE -HELP 💚",
+    "CREATED BY BLAKI 💙",
+    "CREATED BY BLAKI 🖤"
 ];
 
 let date = require('date-and-time');
