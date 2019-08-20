@@ -13,7 +13,7 @@ module.exports.run = async (custom, message, args) => {
     const zasady6 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE BANEM !**"
     const react = '✅'
 
-    if(!message.member.roles.some(r => r.name === "Host Customy")) return message.reply("Ooops, nie posiadasz roli: HOST");
+    if(!message.member.roles.some(r => r.name === "Host Customy")) return message.reply("Ooops, nie posiadasz roli ``Host Customy``");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-trio hasło **_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
