@@ -1,4 +1,4 @@
-Oconst blakiconfig = require("./blakiprefix.json");
+const blakiconfig = require("./blakiprefix.json");
 const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
 const blaki = new Discord.Client({disableEveryone: false});
