@@ -65,7 +65,7 @@ custom.on("message", async message => {
     let roles = JSON.parse(fs.readFileSync("./roles.json", "utf8"));
     if(!roles[message.guild.id]){
     roles[message.guild.id] = {
-      roles: CustomRole.HostRole
+      host: CustomRole.HostRole
       };
     }
     let HostRole = roles[message.guild.id].roles;
