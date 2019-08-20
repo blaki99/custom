@@ -12,10 +12,9 @@ const config = {
 };
 
 const aktywnosc = [
-    "CUSTOMY 💙", 
-    "BOT MADE BY BLAKI 💚",
-    "BOT PREFIX (-) ❤", 
-    "USE -HELP 🍁"
+    "CUSTOMY 🖤", 
+    "BOT CREATED BY BLAKI 🍁", 
+    "USE -HELP 💚"
 ];
 
 let date = require('date-and-time');
@@ -26,7 +25,7 @@ blaki.on('ready', async () =>
   setInterval(function() {
         var actID = Math.floor(Math.random() * Math.floor(aktywnosc.length));
         blaki.user.setActivity(aktywnosc[actID]);
-    }, 5000);
+    }, 10000);
 });
 
 fs.readdir("./commands/", (err, files) => {
