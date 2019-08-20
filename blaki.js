@@ -23,10 +23,10 @@ let date = require('date-and-time');
 blaki.on('ready', async () => 
 {
   console.log(`${blaki.user.username} jest online!`);
-  setInterval(function() {
+  setInterval(() => {
         const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
         blaki.user.setActivity(activities_list[index]);
-    }, 10000);
+    }, 5000);
 });
 
 fs.readdir("./commands/", (err, files) => {
