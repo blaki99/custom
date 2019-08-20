@@ -16,7 +16,20 @@ let date = require('date-and-time');
 blaki.on('ready', async () => 
 {
   console.log(`${blaki.user.username} jest online!`);
-  blaki.user.setActivity('BOT CREATED BY BLAKI', { type: 'PLAYING'});
+  switch (blaki.user.setActivity) {
+    case '1':
+        ('CUSTOMY ❤', { type: 'PLAYING'});
+        break;
+    case '2':
+        ('CUSTOMY 💙', { type: 'PLAYING'});
+        break;
+    case '3':
+        ('CUSTOMY 💚', { type: 'PLAYING'})
+        break;
+    case '4':
+        ('CUSTOMY 💖', { type: 'PLAYING'});
+        break;
+    }
 });
 
 fs.readdir("./commands/", (err, files) => {
