@@ -14,8 +14,8 @@ module.exports.run = async (custom, message, args) => {
     const react = '✅'
 
     let role = JSON.parse(fs.readFileSync("../blakirole.json", "utf8"));
-    }
     let host = role[message.guild.id].role;
+ 
     if(!message.member.roles.some(r=>[host].includes(r.name))) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-trio hasło **_ ❌").then(() =>
     {
