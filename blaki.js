@@ -1,11 +1,11 @@
-const blakiconfig = require("./blakiprefix.json");
+const CustomConfig = require("./blakiprefix.json");
 const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
-const blaki = new Discord.Client({disableEveryone: false});
+const custom = new Discord.Client({disableEveryone: false});
 require('dotenv-flow').config();
 
 const fs = require("fs");
-blaki.commands = new Discord.Collection();
+custom.commands = new Discord.Collection();
 
 const config = {
     token: process.env.TOKEN
@@ -19,12 +19,12 @@ const aktywnosc = [
 
 let date = require('date-and-time');
 
-blaki.on('ready', async () => 
+custom.on('ready', async () => 
 {
-  console.log(`${blaki.user.username} jest online!`);
+  console.log(`${custom.user.username} jest online!`);
   setInterval(function() {
         var actID = Math.floor(Math.random() * Math.floor(aktywnosc.length));
-        blaki.user.setActivity(aktywnosc[actID]);
+        custom.user.setActivity(aktywnosc[actID]);
     }, 10000);
 });
 
@@ -41,23 +41,23 @@ fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`Poprawnie załadowano ${f}!`);
-    blaki.commands.set(props.help.name, props);
+    custom.commands.set(props.help.name, props);
   });
 
 });
 
-blaki.on("message", async message => {
+custom.on("message", async message => {
     
-    if(message.author.blaki) return;
+    if(message.author.custom) return;
     if(message.channel.type === "dm") return;
   
-    let prefix = blakiconfig.prefix;
+    let prefix = CustomConfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
   
-    let commandfile = blaki.commands.get(cmd.slice(prefix.length));
-    if(commandfile) commandfile.run(blaki,message,args);
+    let commandfile = custom.commands.get(cmd.slice(prefix.length));
+    if(commandfile) commandfile.run(custom,message,args);
 });
 
-blaki.login(config.token);
+custom.login(config.token);
