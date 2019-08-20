@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (blaki, message, args) => {
+module.exports.run = async (custom, message, args) => {
 
-    let host = message.guild.roles.find("name", "Host Customy");
+    let host = message.guild.roles.find("name", "HOST");
 
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
 ${msg} ${msg2}${ramka2}`)
     .addField("__**OD:**__", `${message.author}`)
     .setTimestamp(message.createdAt)
-    .setFooter("Nowa Informacja", "https://i.imgur.com/eBDl1P5.jpg");
+    .setFooter("Nowa Informacja", "https://i.imgur.com/VRM530o.jpg");
     message.channel.send(msgEmbed)
 }
 
