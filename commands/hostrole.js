@@ -9,7 +9,7 @@ module.exports.run = async (custom, message, args) => {
   let roles = JSON.parse(fs.readFileSync("./roles.json", "utf8"));
 
   roles[message.guild.id] = {
-    roles: args[0]
+    host: args[0]
   };
 
   fs.writeFile("./roles.json", JSON.stringify(roles), (err) => {
