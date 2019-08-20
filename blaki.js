@@ -11,7 +11,7 @@ const config = {
     token: process.env.TOKEN
 };
 
-const activities_list = [
+const aktywnosc = [
     "CUSTOMY 💙", 
     "BOT MADE BY BLAKI 💚",
     "BOT PREFIX (-) ❤", 
@@ -23,9 +23,9 @@ let date = require('date-and-time');
 blaki.on('ready', async () => 
 {
   console.log(`${blaki.user.username} jest online!`);
-  setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
-        blaki.user.setActivity(activities_list[index]);
+  setInterval(function() {
+        var actID = Math.floor(Math.random() * Math.floor(aktywnosc.length));
+        blaki.user.setActivity(aktywnosc[actID]);
     }, 5000);
 });
 
