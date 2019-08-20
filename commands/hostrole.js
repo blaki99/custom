@@ -6,13 +6,13 @@ module.exports.run = async (custom, message, args) => {
   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("Nie posiadasz uprawnień.");
   if(!args[0] || args[0 == "help"]) return message.reply("Użycie: -host <nazwa roli bez @>");
 
-  let roles = JSON.parse(fs.readFileSync("./roles.json", "utf8"));
+  let roles = JSON.parse(fs.readFileSync("./blakirole.json", "utf8"));
 
   roles[message.guild.id] = {
-    host: args[0]
+    "host": "args[0]"
   };
 
-  fs.writeFile("./roles.json", JSON.stringify(roles), (err) => {
+  fs.writeFile("./blakirole.json", JSON.stringify(roles), (err) => {
   });
   let sEmbed = new Discord.RichEmbed()
   .setColor("#FF0000")
