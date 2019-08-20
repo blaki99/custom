@@ -12,8 +12,6 @@ module.exports.run = async (custom, message, args) => {
     const zasady5 = "> **» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady6 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE BANEM !**"
     const react = '✅'
-  
-    let content = message.member.roles.findtoLowerCase()
 
     if(!message.member.roles.some(role => role.name === 'HOST')) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-trio hasło **_ ❌").then(() =>
