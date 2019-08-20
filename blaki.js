@@ -1,4 +1,5 @@
 const CustomConfig = require("./blakiprefix.json");
+const CustomRole = require("./blakirole.json");
 const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
 const custom = new Discord.Client({disableEveryone: false});
@@ -60,6 +61,14 @@ custom.on("message", async message => {
 
     let prefix = prefixes[message.guild.id].prefixes;
     if(!message.content.startsWith(prefix)) return;
+
+    let roles = JSON.parse(fs.readFileSync("./roles.json", "utf8"));
+    if(!roles[message.guild.id]){
+    roles[message.guild.id] = {
+      roles: CustomRole.HostRole
+      };
+    }
+    let HostRole = roles[message.guild.id].roles;
 
     //let prefix = CustomConfig.prefix;
     let messageArray = message.content.split(" ");
