@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
-const CustomConfig = require("../blakiprefix.json");
+const CustomConfig = require("./blakiprefix.json");
 
 module.exports.run = async (custom, message, args) => {
     
     message.delete().catch(O_o=>{});
 
-    let prefixes = JSON.parse(fs.readFileSync("../prefixes.json", "utf8"));
+    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
     if(!prefixes[message.guild.id]){
     prefixes[message.guild.id] = {
       prefixes: CustomConfig.prefix
