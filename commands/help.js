@@ -8,7 +8,7 @@ module.exports.run = async (custom, message, args) => {
     .setColor("#FF0000")
     .addField("__**KOMENDY:**__", `> solo` + `\n` + `> duo` + `\n` + `> trio` + `\n` + `> msg`)
     .setTimestamp(message.createdAt)
-    .setFooter("Dostępne Komendy", "https://i.imgur.com/9A72yKJ_d.jpg");
+    .setFooter("Dostępne Komendy", `${message.author.avatarURL}`);
     message.channel.send(HelpEmbed);
 }
 
