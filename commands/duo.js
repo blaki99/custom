@@ -28,7 +28,7 @@ module.exports.run = async (custom, message, args) => {
     .addField("**HOST:**", `${message.author}`, true)
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4 + `\n`+ zasady5 + `\n`+`\n`+ zasady6)
     .setTimestamp(message.createdAt)
-    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/9A72yKJ_d.jpg");
+    .setFooter("Kliknij reakcje jeśli grasz", message.author.avatarURL);
     message.channel.send(everyone.toString());
     message.channel.send(customEmbed).then(function (message) {
         message.react(react)
