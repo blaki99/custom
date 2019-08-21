@@ -11,7 +11,7 @@ module.exports.run = async (custom, message, args) => {
     const zasady4 = "> **» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
     const zasady5 = "> **» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady6 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE !**"
-    const react = '✅'
+    const react = '🎮'
   
     if(!message.member.roles.some(r => r.name === "Host Customy")) return message.reply("Ooops, nie posiadasz roli ``Host Customy``");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-duo hasło **_ ❌").then(() =>
