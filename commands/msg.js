@@ -10,7 +10,7 @@ module.exports.run = async (custom, message, args) => {
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-msg <wiadomość>**_ ❌")
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
-    .setColor("#031327")
+    .setColor("#FF0000")
     .addField("__**INFORMACJA:**__", `${ramka}
 ${msg} ${msg2}${ramka}`)
     .addField("__**OD:**__", `${message.author}`)
