@@ -4,7 +4,7 @@ module.exports.run = async (custom, message, args) => {
  
     let pass = (args[0]);
     let everyone = message.guild.defaultRole;
-    const zasady0 = "> **» NIE** UŻYWAMY **ROBOTÓW** PODCZAS GRY !"
+    const zasady0 = "> **» NIE** UŻYWAJ **ROBOTÓW** PODCZAS GRY !"
     const zasady1 = "> **» NIE** UDOSTĘPNIAJ NIKOMU HASŁA DO GRY !"
     const zasady2 = "> **» NIE** STREAMSNIPUJ INNYCH GRACZY !"
     const zasady3 = "> **» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY !"
