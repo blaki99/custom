@@ -14,7 +14,7 @@ const config = {
 const aktywnosc = [
     "SCRIMS BOT 💛", 
     "CREATED BY BLAKI 🍁", 
-    "PREFIX (-) HELP 💚",
+    "PREFIX (//) HELP 💚",
     "CREATED BY BLAKI 💙",
     "CREATED BY BLAKI 🖤"
 ];
