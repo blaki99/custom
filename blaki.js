@@ -28,7 +28,21 @@ custom.on('ready', async () =>
         var actID = Math.floor(Math.random() * Math.floor(aktywnosc.length));
         custom.user.setActivity(aktywnosc[actID]);
     }, 10000);
+    const guild = custom.guilds.get('436177140942241792');
+  setInterval(function() 
+  {
+    let now = new Date();
+    const DateChannel = custom.channels.get("625001308033777694");
+    const HumansChannel = custom.channels.get("624275581919559710");
+    const OnlineChannel = custom.channels.get("624275633412898836");
+    var HumansCount = guild.memberCount;
+    var OnlineCount = guild.members.filter(member => member.presence.status == 'online' || member.presence.status == 'idle' || member.presence.status == 'dnd').size
+    DateChannel.setName("📅 " + date.format(now, 'DD.MM.YYYY'));
+    OnlineChannel.setName("💚 Aktywni: " + OnlineCount);
+    HumansChannel.setName("🦉 Jest Nas: " + HumansCount);
+  }, 20000)
 });
+
 
 fs.readdir("./commands/", (err, files) => {
 
