@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
     const react = '✅'
   
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
-    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **.solo <hasło> <tryb gry>**_ ❌").then(() =>
+    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **.game <hasło> <tryb gry>**_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
     })
@@ -40,5 +40,5 @@ module.exports.run = async (blaki, message, args) => {
 }
  
 module.exports.help = {
-    name: "solo"
+    name: "game"
 }
