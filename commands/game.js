@@ -33,7 +33,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4 + `\n`+ zasady5 + `\n`+ `\n`+ zasady6)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli grasz", `${config.avatar}`);
-    message.channel.send(everyone.toString());
+    message.channel.send('<@&612971761318887444>');
     message.channel.send(customEmbed).then(function (message) {
         message.react(react)
     })
