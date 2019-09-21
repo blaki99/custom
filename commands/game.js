@@ -16,8 +16,9 @@ module.exports.run = async (blaki, message, args) => {
     const zasady5 = "> **» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady6 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE !**"
     const react = '✅'
+    const ramka3 = "``"
   
-    if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
+    if(!message.member.roles.has(HOST.id)) return message.reply(`Ooops, musisz posiadać role ${ramka3}HOST${ramka3}!`);
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **//game <hasło> <tryb gry>**_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
