@@ -6,7 +6,7 @@ module.exports.run = async (custom, message, args) => {
 
     let HelpEmbed = new Discord.RichEmbed()
     .setColor("#FF0000")
-    .addField("__**KOMENDY:**__", `>>> solo` + `\n` + `duo` + `\n` + `trio` + `\n` + `msg`)
+    .addField("__**KOMENDY:**__", `>>> game` + `\n` + `msg`)
     .setTimestamp(message.createdAt)
     .setFooter("Dostępne Komendy", "https://i.imgur.com/6Ew0Bza.png");
     message.channel.send(HelpEmbed);
