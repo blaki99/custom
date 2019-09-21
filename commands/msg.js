@@ -9,8 +9,9 @@ module.exports.run = async (custom, message, args) => {
     let msg2 = args.slice(1).join(' ')
     const ramka = "```"
     const ramka2 = "```"
+    const ramka3 = "``"
 
-    if(!message.member.roles.has(host.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
+    if(!message.member.roles.has(host.id)) return message.reply(`Ooops, musisz posiadać role ${ramka3}HOST${ramka3}!`);
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **//msg <wiadomość>**_ ❌")
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
