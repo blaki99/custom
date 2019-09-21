@@ -1,34 +1,38 @@
 const Discord = require("discord.js");
+const config = require("../blakiconfig.json");
+
+module.exports.run = async (blaki, message, args) => {
  
-module.exports.run = async (custom, message, args) => {
+    let HOST = message.guild.roles.find("name", "HOST");
  
     let pass = (args[0]);
+    let mode = args.slice(1).join(' ')
     let everyone = message.guild.defaultRole;
-    const zasady0 = "> **» NIE** UŻYWAJ **ROBOTÓW** PODCZAS GRY !"
+    const zasady0 = "> **» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY !"
     const zasady1 = "> **» NIE** UDOSTĘPNIAJ NIKOMU HASŁA DO GRY !"
     const zasady2 = "> **» NIE** STREAMSNIPUJ INNYCH GRACZY !"
     const zasady3 = "> **» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY !"
     const zasady4 = "> **» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
     const zasady5 = "> **» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady6 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE !**"
-    const react = '🎮'
+    const react = '✅'
   
-    if(!message.member.roles.some(r => r.name === "Host Customy")) return message.reply("Ooops, nie posiadasz roli ``Host Customy``");
-    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **-duo hasło **_ ❌").then(() =>
+    if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
+    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **.solo <hasło> <tryb gry>**_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
     })
     message.delete();
     let customEmbed = new Discord.RichEmbed()
-    .setColor("#ff0000")
+    .setColor("#ffa500")
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
-    .setTitle(`**DUO CUSTOM**`)
+    .setTitle(`**${mode} CUSTOM**`)
     .setURL('https://discord.gg/u9W8euF')
     .addField("**HASŁO:**", `**${pass}**`, true)
     .addField("**HOST:**", `${message.author}`, true)
-    .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4 + `\n`+ zasady5 + `\n`+`\n`+ zasady6)
+    .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4 + `\n`+ zasady5 + `\n`+ `\n`+ zasady6)
     .setTimestamp(message.createdAt)
-    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/6Ew0Bza.png");
+    .setFooter("Kliknij reakcje jeśli grasz", `${config.avatar}`);
     message.channel.send(everyone.toString());
     message.channel.send(customEmbed).then(function (message) {
         message.react(react)
@@ -36,5 +40,5 @@ module.exports.run = async (custom, message, args) => {
 }
  
 module.exports.help = {
-    name: "duo"
+    name: "solo"
 }
