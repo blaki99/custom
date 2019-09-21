@@ -12,7 +12,7 @@ const config = {
 };
 
 const aktywnosc = [
-    "SCRIMS BOT 💛", 
+    "⋄ Smart Bot ⋄", 
     "CREATED BY BLAKI 🍁", 
     "PREFIX (//) HELP 💚",
     "CREATED BY BLAKI 💙",
