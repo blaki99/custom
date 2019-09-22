@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
     const react = '✅'
     const ramka3 = "``"
   
-    if(!message.member.roles.has(HOST.id)) return message.reply(`Ooops, musisz posiadać role ${ramka3}HOST${ramka3}!`);
+    if(!message.member.roles.has(host.id)) return message.reply(`Ooops, musisz posiadać role ${ramka3}HOST${ramka3}!`);
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **//game <hasło> <tryb gry>**_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
