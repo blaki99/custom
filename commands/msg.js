@@ -3,7 +3,7 @@ const config = require("../blakiconfig.json");
 
 module.exports.run = async (custom, message, args) => {
 
-    let host = message.guild.roles.find("name", "HOST 💜");
+    let host = message.guild.roles.get("572848425112961045");
 
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
