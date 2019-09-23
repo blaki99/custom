@@ -6,7 +6,7 @@ module.exports.run = async (blaki, message, args) => {
     let host = message.guild.roles.get("572848425112961045");
  
     let pass = (args[0]);
-    let mode = args.slice(1).join(' ')
+    let mode = args.slice(1).join(' ').toUpperCase();
     let everyone = message.guild.defaultRole;
     const zasady0 = "> **» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY !"
     const zasady1 = "> **» NIE** UDOSTĘPNIAJ NIKOMU HASŁA DO GRY !"
